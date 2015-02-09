@@ -1,0 +1,34 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %} The Agency {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}master.css"/>
+    {% block css_links %}
+
+{#        Any extra CSS links that every page should use will go inside of this block.  #}
+    {% endblock %}
+</head>
+<style>
+    {% block page_style %}
+{#        Any CSS that is specific only to the base page will go inside of this block.  #}
+
+    {% endblock %}
+</style>
+<body>
+
+{% block content %}
+{#        Any content specific to the base page (i.e. a navbar, footer, sidebar) should go in this area. #}
+
+{% endblock %}
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+        {% block js %}
+
+{#            Any JavaScript specific to this page will come here.  #}
+        {% endblock %}
+    </script>
+</body>
+
+</html>
