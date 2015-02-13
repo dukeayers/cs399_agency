@@ -2,6 +2,104 @@
 
 {% block content %}
 
-    <h3>About Page</h3>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>About Us</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<style>
+
+.btn-success {
+
+	background-color: #C88D50;
+	border-radius: 0px;
+	border-color: #333;
+	}
+
+.btn-success:hover {
+
+	background-color: #333;
+	border-radius: 0px;
+	border-color: #C88D50;
+	}
+
+h1, h2, span, p {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h1, h2 {
+	color: #C88D50;
+}
+
+p {
+	font-weight: normal;
+}
+
+</style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: #FFF;">
+        <h1 style="text-align: center; color: #C88D50;">Have a Cookie on Us!</h1>
+        <p>Here at _____ we deliver a single cookie to someone of your choice!  We are a non profit organization so all we need from you is the address of that lucky person and soon they will be recieving their cookie by mail.
+	But that's not all!  We have other promotions in the works to give your special someones a nice surprise.  Click below to see what we can offer you!</p>
+
+	<div align=center>
+        <img src="{{ STATIC_URL }}misc/cookie.png" alt= "" height="" width=""><a class="btn btn-lg btn-success" href="#" role="button">Our Promotions</a><img src="{{ STATIC_URL }}misc/cookie.png" alt= "" height="" width="">
+	</div>
+	<br><br>
+	<h2>Additional Header</h2>
+		<span>Anything extra goes here!</span><br><br>
+	<h2>Additional Header</h2>
+		<span>Anything extra goes here!</span><br><br>
+	<h2>Additional Header</h2>
+		<span>Anything extra goes here!</span><br><br>
+
+      </div>
+
+    </div> <!-- /container -->
+
+
+<!-- Obtain latest version of jquery automatically from online server so it doesn't have to be on my machine -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- Obtain Bootstrap javascript from CDN (online service) so it doesn't have to be on my machine -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
 
 {% endblock %}
