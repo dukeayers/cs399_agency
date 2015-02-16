@@ -1,7 +1,56 @@
 {%  extends "base.html" %}
-
+{% block page_style %}
+    .splashImg{
+        height: 100%;
+        width: 100%;
+       -webkit-filter: blur(5px) contrast(4);
+        filter: blur(5px) contrast(4);
+        position: absolute;
+    }
+    .splashText{
+        z-index:9999;
+        position: absolute;
+        top: 25%;
+        left: 33%;
+        color:white;
+    }
+    .btn-primary{
+        font-size:2em;
+        background:transparent;
+        border: 3px solid black;
+        border-radius: 0;
+        font-weight:800;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    .btn-primary:hover{
+        background:#89C4F4;
+        border: 1px solid #89C4F4;
+        color:white;
+        font-size:2em;
+    }
+    .font-love{
+        font-size: 4em;
+        font-weight: 800;
+        color:black;
+    }
+    .about-button{
+        color:black;
+        border: 1px solid black;
+        border-radius:50%;
+        font-size: 2em;
+        padding:10px;
+    }
+    .about-button:hover, .about-button:hover glyphicon {
+        background:black;
+        color:white !important;
+    }
+{% endblock %}
 {% block content %}
-
-    <h3>Splash Page</h3>
-
+    <div class="splashText text-center" >
+        <h1 class="font-love">Sea Side Advertising</h1>
+        <h4 style="color:black; font-size:1.8em;">A free advertising agency for all of your needs</h4>
+        <a href="about"><span class="glyphicon glyphicon-menu-down about-button" style=""></span></a>
+{#        <a class="btn btn-primary" href="" style="">Rippin' Rocket Advertising</a>#}
+    </div>
+    <img src="{{ STATIC_URL }}misc/splash.jpg" alt="" class="splashImg" style=""/>
 {% endblock %}
