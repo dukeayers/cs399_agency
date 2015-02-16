@@ -1,22 +1,79 @@
 {%  extends "base.html" %}
 {% block page_style %}
-
+body{
+    background:#ECECEC;
+    }
+    .altered-cookie{
+        border: none;
+        box-shadow: none!important;
+        border-top: 1px solid #efefef;
+        border-radius: 0;
+        font-size: 1.5em;
+        margin-bottom:15px;
+        padding-top: 15px;
+    }
+    .altered-cookie:focus{
+        border-top: 1px solid #efefef;
+    }
+    .dropdown:focus{
+         border-top: 1px solid #efefef;
+    }
+    .dropdown{
+        border: none;
+        box-shadow: none!important;
+        border-top: 1px solid #efefef;
+{#        border-bottom: 1px solid #efefef;#}
+        border-radius: 0;
+        font-size: 1.5em;
+        margin-bottom:5px;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    label{
+        display:none;
+    }
+    .btn-primary{
+        margin-top:10px;
+        margin-bottom:10px;
+        border-radius: 0;
+        border: 1px solid black;
+        background: white !important;
+        color:black;
+        font-weight:bold;
+    }
+    .btn-primary:hover{
+        background:#89C4F4 !important;
+        color:white;
+    }
 {% endblock %}
 {% block content %}
-    <div class="container">
-        {% for campaign in CurrentCampaign %}
-                <h2>{{ campaign.title }}</h2>
-                <p>{{ campaign.description }}</p>
-        {% endfor %}
+    <div class="container" style="background:white; ">
 
     {% for campaign in CurrentCampaign %}
-        {% if campaign.id == 1 %}
-            <form action="/location" method="post" class="form-horizontal col-xs-4">
-                {% csrf_token %}
-                {{ form }}
-                <input type="submit" value="Submit" class="btn btn-primary" style="margin-top:10px;"/>
-            </form>
-        {% endif %}
+        <div class="jumbotron" style="background:#89C4F4; color:white; margin-right:-15px; margin-left:-15px;">
+            <h1>{{ campaign.title }}</h1>
+            <h5>{{ campaign.BeginDate }} - {{ campaign.EndDate }}</h5>
+            <a class="btn-default btn" href="/about">Campaigns</a>
+        </div>
+        <div class="row" style="padding-right:15px !important;">
+            <div class="col-xs-6 col-xs-offset-3" >
+                <h4>{{ campaign.description }}</h4>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 ">
+            {% if campaign.id == 1 %}
+                <form action="" method="post" class="form-horizontal">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Send" class="btn btn-primary"/>
+                </form>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for campaign in CurrentCampaign %}
+
     {% endfor %}
     </div>
 {% endblock %}

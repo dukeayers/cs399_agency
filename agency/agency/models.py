@@ -12,10 +12,10 @@ class Location(models.Model):
     street = models.CharField(max_length = 200)
 
 class LocationForm(ModelForm):
-    zip = USZipCodeField(widget=forms.TextInput(attrs={'class': 'form-control', 'required': 'required', 'placeholder': 'Ex: 86001'}))
-    city = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'required': 'required', 'placeholder': 'Ex: Flagstaff'}))
-    state = forms.CharField(widget=USStateSelect(attrs={'class':'form-control', 'required': 'required'}))
-    street = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'required': 'required', 'placeholder': 'Ex: 4th Street'}))
+    zip = USZipCodeField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'Zip Code'}))
+    city = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'City'}))
+    state = forms.CharField(widget=USStateSelect(attrs={'class':'dropdown', 'required': 'required'}))
+    street = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'Street Address'}))
     class Meta:
         model = Location
 
