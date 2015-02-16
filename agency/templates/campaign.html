@@ -1,0 +1,22 @@
+{%  extends "base.html" %}
+{% block page_style %}
+
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% for campaign in CurrentCampaign %}
+                <h2>{{ campaign.title }}</h2>
+                <p>{{ campaign.description }}</p>
+        {% endfor %}
+
+    {% for campaign in CurrentCampaign %}
+        {% if campaign.id == 1 %}
+            <form action="/location" method="post" class="form-horizontal col-xs-4">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit" class="btn btn-primary" style="margin-top:10px;"/>
+            </form>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
