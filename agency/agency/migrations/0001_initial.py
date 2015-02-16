@@ -11,10 +11,23 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Campaign',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=100)),
+                ('description', models.CharField(max_length=1000)),
+                ('BeginDate', models.DateField()),
+                ('EndDate', models.DateField()),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Location',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('zip', models.IntegerField(max_length=5)),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('zip', models.IntegerField(max_length=10)),
                 ('city', models.CharField(max_length=100)),
                 ('state', models.CharField(max_length=2)),
                 ('street', models.CharField(max_length=200)),
