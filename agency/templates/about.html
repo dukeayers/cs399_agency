@@ -2,7 +2,7 @@
 {% block page_style %}
 .btn-success {
 
-	background-color: #C88D50;
+	background-color: #03033c;
 	border-radius: 0px;
 	border-color: #333;
 	}
@@ -11,15 +11,10 @@
 
 	background-color: #333;
 	border-radius: 0px;
-	border-color: #C88D50;
 	}
 
-h1, h2, span, p {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
 h1, h2 {
-	color: #C88D50;
+	color: #03033c;
 }
 
 p {
@@ -29,20 +24,22 @@ p {
 {% block content %}
     <div class="container">
         <div class="jumbotron" style="background-color: #FFF;">
-            <h1 style="text-align: center; color: #C88D50;">Have a Cookie on Us!</h1>
-
-            <p>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on our current campaigns, click on a link below.</p>
-
-            <div align=center>
-                <img src="{{ STATIC_URL }}misc/cookie.png" alt="" height="" width=""><a class="btn btn-lg btn-success"
-                                                                                        href="#" role="button">Our
-                Promotions</a><img src="{{ STATIC_URL }}misc/cookie.png" alt="" height="" width="">
-            </div>
-            <br><br>
-            {% for campaign in campaigns %}
-                <h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
-                <p>{{ campaign.description }}</p>
-            {% endfor %}
-        </div>
-    </div>
+            <h1 style="text-align: center;">Sea Side Advertising</h1>
+			<div align=center>
+				<p>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on our current campaigns, click on a link below.</p>
+				
+				<a class="btn btn-lg btn-success" href="/lists" role="button">Our Promotions</a>
+				
+				<div class="row">
+					{% for campaign in campaigns %}
+					<div class="col-md-5">
+						<h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
+						<p>{{ campaign.description }}</p>
+					</div>		
+					{% endfor %}
+				</div>
+			
+			</div>
+		</div>
+	</div>
 {% endblock %}
