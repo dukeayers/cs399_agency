@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django import forms
 from localflavor.us.forms import USStateSelect
 from localflavor.us.forms import USZipCodeField
+import random
 # Create your models here.
 
 class Location(models.Model):
@@ -24,6 +25,9 @@ class Campaign(models.Model):
     description = models.CharField(max_length = 1000)
     BeginDate = models.DateField()
     EndDate = models.DateField()
+    poster = models.CharField(max_length = 2000,default = "")
+class Promo():
+    promo= random.randrange(10000, 99999)
 
 # class CustomerInfo(models.Model):
 #     online = 'ON'
