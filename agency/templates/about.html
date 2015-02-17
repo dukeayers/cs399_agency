@@ -26,11 +26,13 @@ p {
         <div class="jumbotron" style="background-color: #FFF;">
             <h1 style="text-align: center;">Sea Side Advertising</h1>
 			<div align=center>
-				<p>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on our current campaigns, click on a link below.</p>
+				<p>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on all of our current campaigns, click on a link below.</p>
 				
 				<a class="btn btn-lg btn-success" href="/lists" role="button">Our Promotions</a>
 				
 				<div class="row">
+					<h2>Newest Promotions</h2><br>
+
 					{% for campaign in campaigns %}
 					<div class="col-md-5">
 						<h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
