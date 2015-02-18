@@ -53,13 +53,10 @@ p {
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Campaign List
         <span class="caret"></span></button>
         <ul class="dropdown-menu centerDropdown" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/campaign/1/">Send-A-Cookie</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Campaign #2</a></li>
-	  <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Campaign #3</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Campaign #4</a></li>
+          {% for campaign in campaigns %}
+                 <li role="presentation"><a role="menuitem" href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></li>
+                  <li role="presentation" class="divider"></li>
+            {% endfor %}
         </ul>
       </div>
 	</div>
