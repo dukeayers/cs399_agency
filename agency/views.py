@@ -6,7 +6,7 @@ from agency.models import LocationForm, Campaign,Promo
 
 
 def lists(request):
-    return render(request, 'lists.html')
+    return render(request, 'lists.html',{'campaigns': Campaign.objects.all()})
 
 def home(request):
     return render(request, 'index.html')
