@@ -27,15 +27,3 @@ def campaign(request, campaign_id):
     else:
         form = LocationForm()
     return render(request, 'campaign.html', {'CurrentCampaign': Campaign.objects.filter(id = campaign_id), 'form': form})
-
-def location(request):
-    if request.method == 'POST':
-        form = LocationForm(request.POST)
-
-        if(form.is_valid()):
-            form.save(commit = True)
-            return HttpResponseRedirect('/')
-    else:
-        form = LocationForm()
-
-    return render(request, 'about.html', {'form': form})
