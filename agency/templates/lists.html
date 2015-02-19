@@ -56,26 +56,31 @@ p {
 {% block content %}
     <div class="container" style="background:#89C4F4; color:white !important; border-radius:5px;">
 
-      <!-- Jumbotron -->
-      <div class="jumbotron text-center" style="background:#89C4F4;">
-        <h1 style="text-align: center; color:white;">What Are We Up To?</h1>
-          <a class="btn-primary btn " href="/about" style="color:black; width:33%;">About Us</a>
-        <p>Below you'll find a list of the current campaigns we are running.  Just click the title that sounds interesting to you.  Remember, due to us being non profit these will only last for a limited time so act fast!</p>
+        <!-- Jumbotron -->
+        <div class="jumbotron text-center" style="background:#89C4F4;">
+            <h1 style="text-align: center; color:white;">What Are We Up To?</h1>
+            <a class="btn-primary btn " href="/about" style="color:black; width:33%;">About Us</a>
 
-	<div align=center>
-        <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Campaign List
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu centerDropdown" role="menu" aria-labelledby="menu1">
-          {% for campaign in campaigns %}
-                 <li role="presentation"><a role="menuitem" href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></li>
-                  <li role="presentation" class="divider"></li>
-            {% endfor %}
-        </ul>
-      </div>
-	</div>
+            <p>Below you'll find a list of the current campaigns we are running. Just click the title that sounds
+                interesting to you. Remember, due to us being non profit these will only last for a limited time so act
+                fast!</p>
 
-      </div>
+            <div align=center>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                        Campaign List
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu centerDropdown" role="menu" aria-labelledby="menu1">
+                        {% for campaign in campaigns %}
+                            <li role="presentation"><a role="menuitem"
+                                                       href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></li>
+                            <li role="presentation" class="divider"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
 
     </div> <!-- /container -->
 {% endblock %}
