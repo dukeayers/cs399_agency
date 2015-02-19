@@ -11,14 +11,16 @@ def add_data(apps, schema_editor):
                            "completed, your friend will get an Oatmeal Raisin cookie labeled a Chocolate Chip! Way to "
                            "be tricky.", "Ever wanted to get back at someone but just did not know how?  Send them a "
                                          "glitter bomb!  A tube of glitter will be sent to an address of your choosing "
-                                         "and when it is opened someone will be in for a surprise!", "Responsibility can"
+                                         "and when it is opened someone will be in for a surprise!", "Responsibility can "
                                          "be difficult to gauge. Luckily, there's an easy way to find out if your friend "
-                                        "is responsible or not. Send a gerbil! It could go wonderfully or ... let's just "
-                                                                                            "find out! "]
-    CampaignBegin = ["2015-02-15", "2015-02-15","2015-09-12", "2015-12-01"]
-    CampaignEnd = ["2015-05-23", "2015-08-30","2015-12-15", "2015-02-20"]
+                                         "is responsible or not. Send a gerbil! It could go wonderfully or ... let's just "
+                                         "find out! ", "Is your friend throwing another boring party? Not this time. Tell "
+                                        "us where to set up shop and we'll have the carnival rolling before you even get there."]
 
-    for i in range(0,3):
+    CampaignBegin = ["2015-02-15", "2015-02-15", "2015-09-12", "2015-12-01"]
+    CampaignEnd = ["2015-05-23", "2015-08-30", "2015-12-15", "2015-02-20"]
+
+    for i in range(0, 4):
         data = Campaign(title = CampaignTitles[i], description = CampaignDescription[i], BeginDate = CampaignBegin[i], EndDate = CampaignEnd[i])
         data.save()
 
