@@ -10,7 +10,7 @@ def add_data(apps, schema_editor):
                            "completed, your friend will get an Oatmeal Raisin cookie labeled a Chocolate Chip! Way to "
                            "be tricky.", "Ever wanted to get back at someone but just did not know how?  Send them a "
                                          "glitter bomb!  A tube of glitter will be sent to an address of your choosing "
-                                         "and when it is opened someone will be in for a surprise!", "Responsibility can"
+                                         "and when it is opened someone will be in for a surprise!", "Responsibility can "
                                          "be difficult to gauge. Luckily, there's an easy way to find out if your friend "
                                         "is responsible or not. Send a gerbil! It could go wonderfully or ... let's just "
                                                                                             "find out! "]
