@@ -25,7 +25,7 @@ class Campaign(models.Model):
     description = models.CharField(max_length = 1000)
     BeginDate = models.DateField()
     EndDate = models.DateField()
-    poster = models.CharField(max_length = 2000,default = "")
+    #poster = models.CharField(max_length = 2000,default = "")
 class Promo():
     promo= random.randrange(10000, 99999)
 
