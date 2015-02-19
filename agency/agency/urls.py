@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from views import home, about, location, campaign, lists, thanks
+from views import home, about, campaign, lists, thanks
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'agency.views.home', name='home'),
