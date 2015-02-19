@@ -38,14 +38,27 @@ p {
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
 	color: #03033c;
 }		
-
+    .btn-primary{
+        margin-top:10px;
+        margin-bottom:10px;
+        border-radius: 0;
+        border: 1px solid black;
+        background: white !important;
+        color:black;
+        font-weight:bold;
+    }
+    .btn-primary:hover{
+        background:#89C4F4 !important;
+        color:white;
+    }
 {% endblock %}
 {% block content %}
-    <div class="container">
+    <div class="container" style="background:#9b59b6; color:white !important; border-radius:5px;">
 
       <!-- Jumbotron -->
-      <div class="jumbotron" style="background-color: #FFF;">
-        <h1 style="text-align: center; color: 03033c;">What Are We Up To?</h1>
+      <div class="jumbotron text-center" style="background:#9b59b6;">
+        <h1 style="text-align: center; color:white;">What Are We Up To?</h1>
+          <a class="btn-primary btn " href="/about" style="color:black; width:33%;">About Us</a>
         <p>Below you'll find a list of the current campaigns we are running.  Just click the title that sounds interesting to you.  Remember, due to us being non profit these will only last for a limited time so act fast!</p>
 
 	<div align=center>
@@ -60,20 +73,16 @@ p {
         </ul>
       </div>
 	</div>
-	<br><br>
 
       </div>
 
     </div> <!-- /container -->
-
-
-<!-- Obtain latest version of jquery automatically from online server so it doesn't have to be on my machine -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<!-- Obtain Bootstrap javascript from CDN (online service) so it doesn't have to be on my machine -->
-
-	<script src="{{ STATIC_URL }}jquery/jquery-1.8.2.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+{% endblock %}
+{% block js %}
+    $(document).ready(function(){
+        var docCenter = $(document).height() / 2;
+        var containerHeight = $('.container').height()/2;
+        var center = docCenter - containerHeight;
+        $('.container').css('margin-top', center);
+    });
 {% endblock %}
