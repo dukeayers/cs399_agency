@@ -1,9 +1,7 @@
 from django.core import serializers
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from agency.models import LocationForm, Campaign,Promo
-# Create your views here.
-
+from agency.models import LocationForm, GerbilForm, Campaign,Promo
 
 def lists(request):
     return render(request, 'lists.html',{'campaigns': Campaign.objects.all()})
@@ -19,11 +17,18 @@ def about(request):
 
 def campaign(request, campaign_id):
     if request.method == 'POST':
-        form = LocationForm(request.POST)
-
+        # we need to process data
+        if campaign_id == '3':
+            form = GerbilForm(request.POST)
+        else:
+            form = LocationForm(request.POST)
         if(form.is_valid()):
             form.save(commit = True)
             return HttpResponseRedirect('../../thanks')
     else:
-        form = LocationForm()
+        # create blank forms
+        if campaign_id == '3':
+            form = GerbilForm()
+        else:
+            form = LocationForm()
     return render(request, 'campaign.html', {'CurrentCampaign': Campaign.objects.filter(id = campaign_id), 'form': form})
