@@ -7,15 +7,17 @@ import random
 # Create your models here.
 
 class Location(models.Model):
-    zip = models.IntegerField(max_length = 10)
+    street = models.CharField(max_length = 200)
     city = models.CharField(max_length = 100)
     state = models.CharField(max_length = 2)
-    street = models.CharField(max_length = 200)
+    zip = models.IntegerField(max_length = 10)
+    
+    
 
 class LocationForm(ModelForm):
-    zip = USZipCodeField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'Zip Code'}))
     city = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'City'}))
     state = forms.CharField(widget=USStateSelect(attrs={'class':'dropdown', 'required': 'required'}))
+    zip = USZipCodeField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'Zip Code'}))
     street = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control altered-cookie', 'required': 'required', 'placeholder': 'Street Address'}))
     class Meta:
         model = Location
