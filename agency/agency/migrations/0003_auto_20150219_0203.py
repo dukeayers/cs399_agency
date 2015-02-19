@@ -18,7 +18,7 @@ def add_data(apps, schema_editor):
     CampaignBegin = ["2015-02-15", "2015-02-15","2015-09-12", "2015-12-01"]
     CampaignEnd = ["2015-05-23", "2015-08-30","2015-12-15", "2015-02-20"]
 
-    for i in range(0,2):
+    for i in range(0,3):
         data = Campaign(title = CampaignTitles[i], description = CampaignDescription[i], BeginDate = CampaignBegin[i], EndDate = CampaignEnd[i])
         data.save()
 
