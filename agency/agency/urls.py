@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^about', about),
     url(r'^lists', lists),
     url(r'^location', location),
-    url(r'^campaign/(?P<question_id>\d+)/$', campaign, name="campaign"),
+    url(r'^campaign/(?P<campaign_id>\d+)/$', campaign, name="campaign"),
     url(r'^thanks', thanks),
     # url(r'^admin/', include(admin.site.urls)),
 )

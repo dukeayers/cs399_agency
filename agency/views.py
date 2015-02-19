@@ -17,7 +17,7 @@ def thanks(request):
 def about(request):
     return render(request, 'about.html', {'campaigns': Campaign.objects.all()})
 
-def campaign(request, question_id):
+def campaign(request, campaign_id):
     if request.method == 'POST':
         form = LocationForm(request.POST)
 
@@ -26,8 +26,7 @@ def campaign(request, question_id):
             return HttpResponseRedirect('../../thanks')
     else:
         form = LocationForm()
-    return render(request, 'campaign.html', {'CurrentCampaign': Campaign.objects.filter(id = question_id), 'form': form})
-    #return HttpResponse("You want to see %s." %question_id)
+    return render(request, 'campaign.html', {'CurrentCampaign': Campaign.objects.filter(id = campaign_id), 'form': form})
 
 def location(request):
     if request.method == 'POST':
