@@ -56,6 +56,7 @@ body{
             <h1>{{ campaign.title }}</h1>
             <h5>{{ campaign.BeginDate }} - {{ campaign.EndDate }}</h5>
             <a class="btn-default btn" href="/lists">Campaigns</a>
+            <a class="btn-default btn" href="/about">About</a>
         </div>
 
         <div class="row" style="padding-right:15px !important;">
@@ -71,10 +72,6 @@ body{
                 </form>
             </div>
         </div>
-    {% endfor %}
-
-    {% for campaign in CurrentCampaign %}
-
     {% endfor %}
     </div>
 {% endblock %}

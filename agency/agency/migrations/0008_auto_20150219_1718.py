@@ -16,17 +16,17 @@ def add_data(apps, schema_editor):
                                                                                             "find out! ", "Test Test"]
     CampaignBegin = ["2015-02-15", "2015-02-15", "2015-09-12", "2015-12-01"]
     CampaignEnd = ["2015-05-23", "2015-08-30", "2015-12-15", "2015-02-20"]
-    CampId = [1, 2, 3, 4]
+    # CampId = [1, 2, 3, 4]
 
     for i in range(0, 4):
-        data = Campaign(title=CampaignTitles[i], description=CampaignDescription[i], BeginDate=CampaignBegin[i], EndDate=CampaignEnd[i], id=CampId[i])
+        data = Campaign(title=CampaignTitles[i], description=CampaignDescription[i], BeginDate=CampaignBegin[i], EndDate=CampaignEnd[i])
         data.save()
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('agency', '0002_initial'),
+        ('agency', '0001_initial'),
     ]
 
     operations = [
