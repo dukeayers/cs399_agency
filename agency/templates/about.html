@@ -28,7 +28,8 @@ p {
 {% endblock %}
 {% block content %}
     <div class="jumbotron" style="background:#89C4F4; height:400px; width:100%;">
-            <h1 onclick="window.location.href='https://github.com/dukeayers/cs399_agency';" class="" style="color:white; margin-left:50px;">Sea Side Advertising</h1>
+        <h1 onclick="window.location.href='https://github.com/dukeayers/cs399_agency';" class=""
+            style="color:white; margin-left:50px;">Sea Side Advertising</h1>
     </div>
     <div class="container">
         <div class="row">
@@ -36,11 +37,16 @@ p {
                 <img class="img-responsive" src="{{ STATIC_URL }}misc/about.jpg" style="padding-top:15px;" alt=""/>
             </div>
             <div class="col-xs-5 text-center" style="background:white; margin-top:-200px;">
-            <br><br>
-            <h4 >Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on all of our current campaigns, click on a link below.</h4>
+                <br><br>
+                <h4>Here at Sea Side Advertising, we deliver free advertising services for individuals and small
+                    businesses, including our famous cookie campaign! We are a non-profit organization funded by an
+                    anonymous donor whose mission is to bring free advertising services to people and businesses who are
+                    competing for customer attention in this increasingly noisy world. Our campaigns are unique and
+                    clever. We tailor each campaign to the needs of the customer to make your experience unforgettable.
+                    For more details on all of our current campaigns, click on a link below.</h4>
             </div>
         </div>
-       
+
         <div class="row text-center" style="margin-bottom:100px;">
             <h2>Recent Promotions</h2><br>
 
@@ -48,13 +54,12 @@ p {
                 {% if campaign.id != 4 %}
                     <div class="col-md-4">
                         <h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
-                        <p>{{ campaign.description }}</p>       
+
+                        <p>{{ campaign.description }}</p>
                     </div>
                 {% endif %}
             {% endfor %}
-             <a class="btn btn-lg btn-success" style="margin-top:30px;" href="/lists" role="button">All Promotions</a>
-        </div>
-                               
+            <a class="btn btn-lg btn-success" style="margin-top:30px;" href="/lists" role="button">All Promotions</a>
         </div>
 
     </div>

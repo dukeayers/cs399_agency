@@ -5,7 +5,6 @@ from localflavor.us.forms import USStateSelect
 from localflavor.us.forms import USZipCodeField
 from localflavor.us.forms import USPhoneNumberField
 import random
-# Create your models here.
 
 class Location(models.Model):
     street = models.CharField(max_length = 200)
@@ -48,24 +47,6 @@ class Campaign(models.Model):
     description = models.CharField(max_length = 1000)
     BeginDate = models.DateField()
     EndDate = models.DateField()
-    #poster = models.CharField(max_length = 2000,default = "")
+
 class Promo():
     promo= random.randrange(10000, 99999)
-
-# class CustomerInfo(models.Model):
-#     online = 'ON'
-#     radio = 'RA'
-#     friend = 'FR'
-#     search = 'SE'
-#     social = 'SO'
-#     referenceChoices = (
-#         (online, 'Online'),
-#         (radio, 'Radio'),
-#         (friend, 'Friend'),
-#         (search, 'Search Engine'),
-#         (social, 'Social Media'),
-#     )
-#     firstName = models.CharField(max_length = 32)
-#     lastName = models.CharField(max_length = 32)
-#     email = models.EmailField(label='E-mail')
-#     #reference = models.CharField(max_length = 2, choices = referenceChoices, default = null)
