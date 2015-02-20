@@ -3,27 +3,27 @@
 {% block page_style %}
 .btn-success {
 
-	background-color: #03033c;
-	border-radius: 0px;
-	border-color: #333;
-	}
+    background-color: #03033c;
+    border-radius: 0px;
+    border-color: #333;
+    }
 
 .btn-success:hover {
 
-	background-color: #333;
-	border-radius: 0px;
-	}
+    background-color: #333;
+    border-radius: 0px;
+    }
 
 h1, h2 {
-	color: #03033c;
+    color: #03033c;
 }
 
 h4 {
-	color: #000000;
+    color: #000000;
 }
 
 p {
-	font-weight: normal;
+    font-weight: normal;
 }
 {% endblock %}
 {% block content %}
@@ -35,22 +35,24 @@ p {
             <div class="col-xs-5 col-xs-offset-1" style="background:white; margin-top:-200px;">
                 <img class="img-responsive" src="{{ STATIC_URL }}misc/about.jpg" style="padding-top:15px;" alt=""/>
             </div>
-			<div class="col-xs-5 text-center" style="background:white; margin-top:-200px;">
-			<br><br>
-			<h4>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on all of our current campaigns, click on a link below.</h4>
-			</div>
+            <div class="col-xs-5 text-center" style="background:white; margin-top:-200px;">
+            <br><br>
+            <h4>Here at Sea Side Advertising, we deliver free advertising services for individuals and small businesses, including our famous cookie campaign! We are a non-profit organization funded by an anonymous donor whose mission is to bring free advertising services to people and businesses who are competing for customer attention in this increasingly noisy world. Our campaigns are unique and clever. We tailor each campaign to the needs of the customer to make your experience unforgettable. For more details on all of our current campaigns, click on a link below.</h4>
+            </div>
         </div>
        
         <div class="row text-center" style="margin-bottom:100px;">
             <h2>Recent Promotions</h2><br>
 
             {% for campaign in campaigns %}
-            <div class="col-md-4">
-                <h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
-                <p>{{ campaign.description }}</p>
-            </div>
+                {% if campaign.id != 4 %}
+                    <div class="col-md-4">
+                        <h2><a href="campaign/{{ campaign.id }}">{{ campaign.title }}</a></h2>
+                        <p>{{ campaign.description }}</p>       
+                    </div>
+                {% endif %}
             {% endfor %}
-			 <a class="btn btn-lg btn-success" style="margin-top:30px;" href="/lists" role="button">All Promotions</a>
+             <a class="btn btn-lg btn-success" style="margin-top:30px;" href="/lists" role="button">All Promotions</a>
         </div>
                                
         </div>
